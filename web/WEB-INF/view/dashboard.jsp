@@ -1,0 +1,21 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    a { margin-right: 10px; }
+  </style>
+</head>
+<body>
+<h2>Welcome, <%= session.getAttribute("username") %>!</h2>
+<p>Your role is: ${role}</p>
+<% if ("Employee".equals(session.getAttribute("role"))) { %>
+<a href="<%= request.getContextPath() %>/complaint/submit">Submit Complaint</a>
+<a href="<%= request.getContextPath() %>/complaint/list">View My Complaints</a>
+<% } else if ("Admin".equals(session.getAttribute("role"))) { %>
+<a href="<%= request.getContextPath() %>/complaint/list">View All Complaints</a>
+<% } %>
+<a href="<%= request.getContextPath() %>/logout">Logout</a>
+</body>
+</html>
