@@ -10,6 +10,7 @@
         body {
             background: linear-gradient(135deg, #6b48ff, #00d2ff);
             height: 100vh;
+            width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,7 +25,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             padding: 2rem;
             text-align: center;
-            max-width: 500px;
+            max-width: 700px;
             width: 90%;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -50,6 +51,8 @@
             border: none;
             border-radius: 25px;
             font-weight: 500;
+            width: auto;
+            display: inline-block;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .btn-custom:hover {
@@ -68,12 +71,16 @@
             .card-text {
                 font-size: 1rem;
             }
+            .btn-custom {
+                padding: 8px 20px;
+            }
         }
     </style>
 </head>
 <body>
 <div class="card">
-    <h1 class="card-title">Welcome to Complaint Management System</h1>
+    <h1 class="card-title">Welcome to</h1>
+    <h1 class="card-title">Complaint Management System</h1>
     <p class="card-text">Efficiently manage and track your complaints with ease. Log in to get started!</p>
     <a href="login.jsp" class="btn btn-custom">Go to Login</a>
     <p class="time-display">The current time is: <%= new java.util.Date() %></p>
