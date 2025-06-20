@@ -9,19 +9,19 @@ public class DBConnection {
     static {
         dataSource = new BasicDataSource();
         dataSource.setUrl("jdbc:mysql://localhost:3306/cms_db");
-        dataSource.setUsername("root"); // Update with your MySQL username
-        dataSource.setPassword("Viraj@2002"); // Update with your MySQL password
+        dataSource.setUsername("root");
+        dataSource.setPassword("Viraj@2002");
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setMaxTotal(100); // Maximum number of active connections
-        dataSource.setMaxIdle(30);  // Maximum number of idle connections
-        dataSource.setMinIdle(5);   // Minimum number of idle connections
-        dataSource.setMaxWaitMillis(10000); // Max wait time for a connection
-        dataSource.setTestOnBorrow(true);   // Test connection before borrowing
-        dataSource.setValidationQuery("SELECT 1"); // Validation query
+        dataSource.setMaxTotal(100);
+        dataSource.setMaxIdle(30);
+        dataSource.setMinIdle(5);
+        dataSource.setMaxWaitMillis(10000);
+        dataSource.setTestOnBorrow(true);
+        dataSource.setValidationQuery("SELECT 1");
 
-        // Validate initial configuration
+
         try {
-            dataSource.getConnection().close(); // Test the connection
+            dataSource.getConnection().close();
             System.out.println("Database connection pool initialized successfully.");
         } catch (SQLException e) {
             System.err.println("Failed to initialize database connection pool: " + e.getMessage());
@@ -29,7 +29,6 @@ public class DBConnection {
     }
 
     private DBConnection() {
-        // Private constructor to prevent instantiation
     }
 
     public static BasicDataSource getDataSource() {
