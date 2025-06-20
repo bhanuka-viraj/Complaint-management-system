@@ -27,11 +27,27 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.bhanuka.cms.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>ComplaintServlet</servlet-name>
         <servlet-class>com.bhanuka.cms.controller.ComplaintServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ComplaintServlet</servlet-name>
         <url-pattern>/complaint/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DashboardServlet</servlet-name>
+        <servlet-class>com.bhanuka.cms.controller.DashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DashboardServlet</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
     </servlet-mapping>
 </web-app>

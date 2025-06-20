@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Register</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <style>
     body {
@@ -24,11 +24,14 @@
 </head>
 <body>
 <div class="form-container">
-  <h2 class="text-center mb-4">Login</h2>
+  <h2 class="text-center mb-4">Register</h2>
   <% if (request.getAttribute("error") != null) { %>
   <div class="alert alert-danger text-center" role="alert"><%= request.getAttribute("error") %></div>
   <% } %>
-  <form action="login" method="post" class="needs-validation" novalidate>
+  <% if (request.getAttribute("message") != null) { %>
+  <div class="alert alert-success text-center" role="alert"><%= request.getAttribute("message") %></div>
+  <% } %>
+  <form action="register" method="post" class="needs-validation" novalidate>
     <div class="mb-3">
       <label for="username" class="form-label">Username</label>
       <input type="text" class="form-control" id="username" name="username" required>
@@ -39,8 +42,16 @@
       <input type="password" class="form-control" id="password" name="password" required>
       <div class="invalid-feedback">Please enter a password.</div>
     </div>
-    <button type="submit" class="btn btn-primary w-100">Login</button>
-    <p class="text-center mt-2"><a href="register" class="link-primary">Register New User</a></p>
+    <div class="mb-3">
+      <label for="role" class="form-label">Role</label>
+      <select class="form-select" id="role" name="role" required>
+        <option value="Employee">Employee</option>
+        <option value="Admin">Admin</option>
+      </select>
+      <div class="invalid-feedback">Please select a role.</div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Register</button>
+    <p class="text-center mt-2"><a href="login.jsp" class="link-primary">Back to Login</a></p>
   </form>
   <script>
     // Bootstrap validation
